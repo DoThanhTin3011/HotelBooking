@@ -97,29 +97,72 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">
-            <i class="bi bi-person-circle fs-3 mx-2"></i> User Registration
+          <i class="bi bi-person-vcard"></i> User Registration
         </h5>
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control shadow-none">
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <div class="input-group">
-                <input type="password" id="password" class="form-control">
-                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                    <i class="bi bi-eye" id="eyeIcon"></i>
-                </button>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 ps-0 mb-3">
+              <label classs="form-label">Name</label>
+              <input type="text" class="form-control shadow-none">
             </div>
+            <div class="col-md-6 p-0">
+              <label classs="form-label">Email</label>
+              <input type="email" class="form-control shadow-none">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-7 col-md-6 ps-0 mb-3">
+              <label classs="form-label">Phone Number</label>
+              <input type="number" class="form-control shadow-none">
+            </div>
+            <div class="col-lg-5 col-md-6 p-0">
+              <label classs="form-label">Picture</label>
+              <input type="file" class="form-control shadow-none">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-6 ps-0 mb-3">
+              <label classs="form-label">Andress</label>
+              <textarea class="form-control shadow-none" id=""></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-6 ps-0 mb-3">
+              <label classs="form-label">Date of Birth</label>
+              <input type="date" class="form-control shadow-none">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 ps-0 mb-3">
+              <label for="password1" class="form-label">Password</label>
+              <div class="input-group">
+                  <input type="password" id="password1" class="form-control shadow-none">
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword1">
+                      <i class="bi bi-eye" id="eyeIcon1"></i>
+                  </button>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 ps-0 mb-3">
+              <label for="password2" class="form-label">Confirm Password</label>
+              <div class="input-group">
+                  <input type="password" id="password2" class="form-control">
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword2">
+                      <i class="bi bi-eye" id="eyeIcon2"></i>
+                  </button>
+              </div>
+            </div>
+
+          </div>
         </div>
         <div class="d-flex align-items-center justify-content-between">
             <button type="submit" class="btn btn-dark shadow-none">
-                LOGIN
+                REGISTER
             </button>
-            <a href="#" class="text-secondary text-decoration-none">Forgot Password?</a>
+            <a href="#" class="text-secondary text-decoration-none">Already have account?</a>
         </div>
       </div>
     </div>
@@ -129,13 +172,35 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<!-- ẩn hiện pass -->
+
 <script>
+    // ẩn hiện pass
     document.getElementById('togglePassword').addEventListener('click', function () {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eyeIcon');
     const isPassword = passwordInput.type === 'password';
 
+    passwordInput.type = isPassword ? 'text' : 'password';
+    eyeIcon.classList.toggle('bi-eye', !isPassword);
+    eyeIcon.classList.toggle('bi-eye-slash', isPassword);
+    });
+
+    document.getElementById('togglePassword1').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password1');
+    const eyeIcon = document.getElementById('eyeIcon1');
+    const isPassword = passwordInput.type === 'password';
+    
+    passwordInput.type = isPassword ? 'text' : 'password';
+    eyeIcon.classList.toggle('bi-eye', !isPassword);
+    eyeIcon.classList.toggle('bi-eye-slash', isPassword);
+    });
+
+  // Xử lý ẩn hiện password thứ hai
+    document.getElementById('togglePassword2').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password2');
+    const eyeIcon = document.getElementById('eyeIcon2');
+    const isPassword = passwordInput.type === 'password';
+    
     passwordInput.type = isPassword ? 'text' : 'password';
     eyeIcon.classList.toggle('bi-eye', !isPassword);
     eyeIcon.classList.toggle('bi-eye-slash', isPassword);
