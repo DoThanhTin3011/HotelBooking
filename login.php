@@ -19,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['user_name'] = $row['name'];
                 $_SESSION['user_role'] = $user_role;
+                $_SESSION['message'] = "Đăng nhập thành công!";
+                $_SESSION['message_type'] = "success";
 
                 if ($user_role == 'admin') {
                     header("Location: admin/dashboard.php");
@@ -28,10 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit;
                 }
             } else {
-                echo "<script>alert('Sai email hoặc mật khẩu.')</script>";
+                $_SESSION['message'] = "Sai email hoặc mật khẩu.";
+                $_SESSION['message_type'] = "error";
+                header("Location: index.php");
+                exit;
             }
         } else {
-            echo "<script>alert('Sai email hoặc mật khẩu.')</script>";
+            $_SESSION['message'] = "Sai email hoặc mật khẩu.";
+            $_SESSION['message_type'] = "error";
+            header("Location: index.php");
+            exit;
         }
     }
 }

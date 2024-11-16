@@ -34,6 +34,7 @@
                         echo '<a href="logout.php" class="btn btn-outline-primary shadow-none mx-lg-3 mx-3">Logout</a>';
                     }
                 } else {
+                    echo '<a href="admin/dashboard.php" class="btn btn-outline-primary shadow-none mx-lg-3 mx-3">Admin Dashboard</a>';
                     echo '<button type="button" class="btn btn-outline-dark shadow-none mx-lg-3 mx-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>';
                     echo '<button type="button" class="btn btn-outline-primary shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>';
                 }
@@ -105,13 +106,7 @@
                                 <label class="form-label">Xác nhận mật khẩu</label>
                                 <input type="password" name="cpassword" class="form-control shadow-none" required>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Vai trò</label>
-                                <select class="form-select shadow-none" name="role" required>
-                                    <option value="user">Khách hàng</option>
-                                    <option value="admin">Quản trị viên</option>
-                                </select>
-                            </div>
+                            <input type="hidden" name="role" value="nguoidung">
                         </div>
                     </div>
                     <div class="text-center">
