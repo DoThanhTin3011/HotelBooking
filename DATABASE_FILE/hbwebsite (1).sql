@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2022 at 09:56 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Nov 23, 2024 at 05:14 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `admin_cred` (
   `sr_no` int(11) NOT NULL,
   `admin_name` varchar(150) NOT NULL,
   `admin_pass` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin_cred`
@@ -56,7 +56,7 @@ CREATE TABLE `booking_details` (
   `user_name` varchar(100) NOT NULL,
   `phonenum` varchar(100) NOT NULL,
   `address` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking_details`
@@ -79,7 +79,12 @@ INSERT INTO `booking_details` (`sr_no`, `booking_id`, `room_name`, `price`, `tot
 (14, 14, 'Luxury Room', 600, 2400, '44', 'tj webdev', '123', 'ad'),
 (15, 15, 'Luxury Room', 600, 1200, NULL, 'tj webdev', '123', 'ad'),
 (16, 16, 'Luxury Room', 600, 1200, '1', 'tj webdev', '123', 'ad'),
-(17, 17, 'Simple Room', 300, 900, '20A', 'tj webdev', '123', 'ad');
+(17, 17, 'Simple Room', 300, 900, '20A', 'tj webdev', '123', 'ad'),
+(18, 18, 'Simple Room', 300, 300, NULL, 'Tin', '123', 'abc'),
+(19, 19, 'Simple Room', 300, 300, NULL, 'Tin', '123', 'abc'),
+(20, 20, 'Simple Room', 300, 600, NULL, 'Tin', '123', 'abc'),
+(21, 21, 'Simple Room', 300, 2400, '201', 'Tin', '123', 'abc'),
+(22, 22, 'Simple Room', 300, 300, '204', 'Tin', '123', 'abc');
 
 -- --------------------------------------------------------
 
@@ -103,7 +108,7 @@ CREATE TABLE `booking_order` (
   `trans_resp_msg` varchar(200) DEFAULT NULL,
   `rate_review` int(11) DEFAULT NULL,
   `datentime` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking_order`
@@ -126,7 +131,12 @@ INSERT INTO `booking_order` (`booking_id`, `user_id`, `room_id`, `check_in`, `ch
 (14, 2, 5, '2022-08-20', '2022-08-24', 1, NULL, 'booked', 'ORD_28902800', '20220820111212800110168816503988359', 2400, 'TXN_SUCCESS', 'Txn Success', 1, '2022-08-20 00:21:06'),
 (15, 2, 5, '2022-08-25', '2022-08-27', 0, 1, 'cancelled', 'ORD_2240367', '20220825111212800110168807304010818', 1200, 'TXN_SUCCESS', 'Txn Success', NULL, '2019-08-21 01:51:28'),
 (16, 2, 5, '2022-08-26', '2022-08-28', 1, NULL, 'booked', 'ORD_28784829', '20220825111212800110168627505415606', 1200, 'TXN_SUCCESS', 'Txn Success', 1, '2022-08-25 01:52:04'),
-(17, 2, 3, '2022-09-08', '2022-09-11', 1, NULL, 'booked', 'ORD_21289330', '20220908111212800110168809204050263', 900, 'TXN_SUCCESS', 'Txn Success', 0, '2022-09-08 01:15:30');
+(17, 2, 3, '2022-09-08', '2022-09-11', 1, NULL, 'booked', 'ORD_21289330', '20220908111212800110168809204050263', 900, 'TXN_SUCCESS', 'Txn Success', 0, '2022-09-08 01:15:30'),
+(18, 2, 3, '2024-11-23', '2024-11-24', 0, NULL, 'pending', 'ORD_25278247', NULL, 0, 'pending', NULL, NULL, '2024-11-23 10:44:54'),
+(19, 2, 3, '2024-11-24', '2024-11-25', 0, NULL, 'pending', 'ORD_23962708', NULL, 0, 'pending', NULL, NULL, '2024-11-23 10:51:16'),
+(20, 2, 3, '2024-11-23', '2024-11-25', 0, NULL, 'pending', 'ORD_27143736', NULL, 0, 'pending', NULL, NULL, '2024-11-23 10:52:38'),
+(21, 2, 3, '2024-11-24', '2024-12-02', 1, NULL, 'booked', '', NULL, 0, 'pending', NULL, 0, '2024-11-23 11:00:51'),
+(22, 2, 3, '2024-11-24', '2024-11-25', 1, NULL, 'booked', '', NULL, 0, 'pending', NULL, 0, '2024-11-23 11:01:52');
 
 -- --------------------------------------------------------
 
@@ -137,7 +147,7 @@ INSERT INTO `booking_order` (`booking_id`, `user_id`, `room_id`, `check_in`, `ch
 CREATE TABLE `carousel` (
   `sr_no` int(11) NOT NULL,
   `image` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `carousel`
@@ -167,7 +177,7 @@ CREATE TABLE `contact_details` (
   `insta` varchar(100) NOT NULL,
   `tw` varchar(100) NOT NULL,
   `iframe` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contact_details`
@@ -187,7 +197,7 @@ CREATE TABLE `facilities` (
   `icon` varchar(100) NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `facilities`
@@ -210,7 +220,7 @@ INSERT INTO `facilities` (`id`, `icon`, `name`, `description`) VALUES
 CREATE TABLE `features` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `features`
@@ -237,7 +247,7 @@ CREATE TABLE `rating_review` (
   `review` varchar(200) NOT NULL,
   `seen` int(11) NOT NULL DEFAULT 0,
   `datentime` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `rating_review`
@@ -269,7 +279,7 @@ CREATE TABLE `rooms` (
   `description` varchar(350) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `removed` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `rooms`
@@ -293,7 +303,7 @@ CREATE TABLE `room_facilities` (
   `sr_no` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `facilities_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_facilities`
@@ -325,7 +335,7 @@ CREATE TABLE `room_features` (
   `sr_no` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `features_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_features`
@@ -356,7 +366,7 @@ CREATE TABLE `room_images` (
   `room_id` int(11) NOT NULL,
   `image` varchar(150) NOT NULL,
   `thumb` tinyint(4) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_images`
@@ -385,7 +395,7 @@ CREATE TABLE `settings` (
   `site_title` varchar(50) NOT NULL,
   `site_about` varchar(250) NOT NULL,
   `shutdown` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `settings`
@@ -404,7 +414,7 @@ CREATE TABLE `team_details` (
   `sr_no` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `picture` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `team_details`
@@ -434,14 +444,14 @@ CREATE TABLE `user_cred` (
   `t_expire` date DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `datentime` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_cred`
 --
 
 INSERT INTO `user_cred` (`id`, `name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`, `is_verified`, `token`, `t_expire`, `status`, `datentime`) VALUES
-(2, 'tj webdev', 'tjwebdev@gmail.com', 'ad', '123', 123324, '2022-06-12', 'IMG_91058.jpeg', '$2y$10$2IsUjaIwxb/UuaR7abvUNOs/VKmwy848VPsNnswF4bIFRIMDE36zm', 1, NULL, NULL, 1, '2022-06-12 16:05:59');
+(2, 'Tin', 'dothanhtin3011@gmail.com', 'abc', '123', 1234, '2003-11-30', 'IMG_91058.jpeg', '$2y$10$wvee26iQd9nygoYBc/T4AOYw8ARQjFmOxlPc1Oop8hcZKQzeltMMy', 1, NULL, NULL, 1, '2022-06-12 16:05:59');
 
 -- --------------------------------------------------------
 
@@ -457,7 +467,7 @@ CREATE TABLE `user_queries` (
   `message` varchar(500) NOT NULL,
   `datentime` datetime NOT NULL DEFAULT current_timestamp(),
   `seen` tinyint(4) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_queries`
@@ -591,13 +601,13 @@ ALTER TABLE `admin_cred`
 -- AUTO_INCREMENT for table `booking_details`
 --
 ALTER TABLE `booking_details`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `booking_order`
 --
 ALTER TABLE `booking_order`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `carousel`
@@ -669,7 +679,7 @@ ALTER TABLE `team_details`
 -- AUTO_INCREMENT for table `user_cred`
 --
 ALTER TABLE `user_cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_queries`
