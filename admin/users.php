@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Users</title>
+  <title>Trang Admin - Khách Hàng</title>
   <?php require('inc/links.php'); ?>
 </head>
 <body class="bg-light">
@@ -19,7 +19,7 @@
   <div class="container-fluid" id="main-content">
     <div class="row">
       <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-        <h3 class="mb-4">USERS</h3>
+        <h3 class="mb-4">KHÁCH HÀNG</h3>
 
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
@@ -33,15 +33,15 @@
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Phone no.</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">DOB</th>
-                    <th scope="col">Verified</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Số điện thoại.</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Ngày sinh</th>
+                    <th scope="col">Xác nhận</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Ngày tạo</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody id="users-data">                 

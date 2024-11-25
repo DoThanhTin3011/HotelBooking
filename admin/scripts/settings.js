@@ -62,12 +62,12 @@ function upd_general(site_title_val,site_about_val)
 
     if(this.responseText == 1)
     {
-      alert('success','Changes saved!');
+      alert('success','Đã lưu thay đổi!');
       get_general();
     }
     else
     {
-      alert('error','No changes made!');
+      alert('error','Khoông có thay đổi!');
     }
   }
 
@@ -83,11 +83,11 @@ function upd_shutdown(val)
   xhr.onload = function(){
     if(this.responseText == 1 && general_data.shutdown==0)
     {
-      alert('success','Site has been shutdown!');
+      alert('success','Trang đã được ngưng hoạt động!');
     }
     else
     {
-      alert('success','Shutdown mode off!');
+      alert('success','Trang đã được bật!');
     }
     get_general();
   }
@@ -154,12 +154,12 @@ function upd_contacts()
     modal.hide();
     if(this.responseText == 1)
     {
-      alert('success','Changes saved!');
+      alert('success','Đã lưu thay đổi!');
       get_contacts();
     }
     else
     {
-      alert('error','No changes made!');
+      alert('error','Không có thay đổi!');
     }
   }
 
@@ -187,16 +187,16 @@ function add_member()
     modal.hide();
 
     if(this.responseText == 'inv_img'){
-      alert('error','Only JPG and PNG images are allowed!');
+      alert('error','Chỉ ảnh JPG and PNG được chấp nhận!');
     }
     else if(this.responseText == 'inv_size'){
-      alert('error','Image should be less than 2MB!');
+      alert('error','Ảnh phải nhỏ hơn 2MB!');
     }
     else if(this.responseText == 'upd_failed'){
-      alert('error','Image upload failed. Server Down!');
+      alert('error','Tải ảnh thất bại!');
     }
     else{
-      alert('success','New member added!');
+      alert('success','Thêm thành viên thành công!');
       member_name_inp.value='';
       member_picture_inp.value='';
       get_members();
@@ -227,11 +227,11 @@ function rem_member(val)
 
   xhr.onload = function(){
     if(this.responseText==1){
-      alert('success','Member removed!');
+      alert('success','Đã xóa thành viên!');
       get_members();
     }
     else{
-      alert('error','Server down!');
+      alert('error','Thất bại!');
     }
   }
 

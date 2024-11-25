@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Bookings Records</title>
+  <title>Trang Admin - Hồ sơ đặt phòng</title>
   <?php require('inc/links.php'); ?>
 </head>
 <body class="bg-light">
@@ -19,7 +19,7 @@
   <div class="container-fluid" id="main-content">
     <div class="row">
       <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-        <h3 class="mb-4">BOOKING RECORDS</h3>
+        <h3 class="mb-4">HỒ SƠ ĐẶT PHÒNG</h3>
 
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
@@ -33,11 +33,11 @@
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
-                    <th scope="col">User Details</th>
-                    <th scope="col">Room Details</th>
-                    <th scope="col">Bookings Details</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Thông tin khách hàng</th>
+                    <th scope="col">Thông tin phòng</th>
+                    <th scope="col">Thông tin đặt phòng</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody id="table-data">                 

@@ -23,16 +23,16 @@ function add_image()
     modal.hide();
 
     if(this.responseText == 'inv_img'){
-      alert('error','Only JPG and PNG images are allowed!');
+      alert('error','Chỉ ảnh JPG and PNG được chấp nhận!');
     }
     else if(this.responseText == 'inv_size'){
-      alert('error','Image should be less than 2MB!');
+      alert('error','Ảnh phải duới 2MB!');
     }
     else if(this.responseText == 'upd_failed'){
-      alert('error','Image upload failed. Server Down!');
+      alert('error','Tải anh thất bại!');
     }
     else{
-      alert('success','New image added!');
+      alert('success','Đã thêm ảnh!');
       carousel_picture_inp.value='';
       get_carousel();
     }
@@ -62,7 +62,7 @@ function rem_image(val)
 
   xhr.onload = function(){
     if(this.responseText==1){
-      alert('success','Image removed!');
+      alert('success','Đã xóa ảnh!');
       get_carousel();
     }
     else{
